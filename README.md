@@ -10,3 +10,6 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+# Centro-Atencion-Canina-Frontend
+Aplicación web desarrollada con React Js que consume la API del sistema del Centro de Atención Canina. Permite a los usuarios interactuar con el sistema de forma intuitiva para registrar mascotas, visualizar citas, acceder al historial de servicios, y gestionar las operaciones del centro.
