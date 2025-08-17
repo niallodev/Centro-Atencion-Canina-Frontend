@@ -1,0 +1,12 @@
+.LoginPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20;
+    height: 100dvh;
+    background-image: url('https://www.superpet.ec/wp-content/uploads/2021/06/husky-2.jpg.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}

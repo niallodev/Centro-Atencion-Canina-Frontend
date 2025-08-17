@@ -1,8 +1,9 @@
 import Login from '../features/auth/Login';
+import '../styles/pages/LoginPage.css'
 
 export default function LoginPage() {
   return (
-    <div style={{ display:'flex', justifyContent:'center', alignItems:'center', margin: '0 auto', maxWidth: 400, padding: 20 }}>
+    <div className='LoginPage'>
       <Login />
     </div>
   );
