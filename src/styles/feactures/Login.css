@@ -16,25 +16,11 @@
     margin-bottom: 20px;
 }
 
-.LoginOptions {
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0 20px;
-}
-
-.LoginLabel{
-    color: white;
-    font-size: 14px;
-}
-
-.LoginParrafo{
-    color: white;
-    font-size: 14;
-    margin-top: 20;
-}
-
-.LoginLink{
-    color: #bbb;
-    font-size: 14; 
-    text-decoration:none;
+@media (max-width:400px) {
+    .LoginContainer {
+        width: 300px;
+    }
+    .LoginForm {
+        min-width: 200px;
+    }
 }

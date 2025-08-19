@@ -1,31 +1,49 @@
 import { useState } from 'react';
-import { login } from '../services/authService';
+import { postLogin, postLogout } from '../services/authService';
+import { useNavigate } from 'react-router-dom';
+const TIEMPO_ERROR = import.meta.env.VITE_TIEMPO_ERROR;
+
 
 export const useLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [remember, setRemember] = useState(false);
   const [error, setError] = useState(null);
+  const navigate = useNavigate(); // <- 1. Inicializar
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
-    try {
-      await login(username, password);
-      alert("Login exitoso");
-    } catch (err) {
-      setError("Credenciales inválidas");
-    }
+    
+      const login = await postLogin(username, password);
+      console.log(login);
+      if (!login.success) {
+        setError(login.message);
+      }else{
+        navigate("/dashboard")
+      }
+      setTimeout(()=> {
+        setError(null);
+      }, TIEMPO_ERROR)
   };
 
   return {
     username,
     password,
-    remember,
     error,
     setUsername,
     setPassword,
-    setRemember,
     handleSubmit,
   };
 };
+
+export const useLogout = () => {
+  const navigate = useNavigate(); // <- 1. Inicializar
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+      const logout = await postLogout();
+      console.log(logout);
+      navigate("/login")
+  };
+  return { handleSubmit }
+}
+

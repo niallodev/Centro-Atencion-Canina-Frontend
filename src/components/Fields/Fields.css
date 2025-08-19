@@ -13,11 +13,27 @@
 .ButtonField {
     width: 100%;
     padding: 12px;
-    border-radius: 20;
+    border-radius: 20px;
     border: none;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.774);
     color: #660066;
     font-weight: bold;
     cursor: pointer;
     font-size: 16,
   }
+
+.LinkButtonField {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  color: #181c20;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.LinkButtonField:hover {
+  color: #333536;
+}

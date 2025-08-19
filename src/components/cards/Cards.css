@@ -1,0 +1,32 @@
+.Card {
+  background: #f3f3f39d;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 200px;
+}
+
+.Card h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.Card p{
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+
+@media (max-width:400px) {  
+  .Card h3 {
+        font-size: 0.9rem;
+    }
+    .Card p {
+        font-size: 0.9rem;
+    }
+}

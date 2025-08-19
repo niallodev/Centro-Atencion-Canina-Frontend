@@ -1,11 +1,11 @@
 import './Fields.css'
 
-export default function ButtonField({type, className, required}) {
+export default function ButtonField({type, className, text}) {
     return (
         <button type={type} 
         className={`ButtonField ${className}`}
         >
-            Login
+            {text}
         </button>
     );
 }

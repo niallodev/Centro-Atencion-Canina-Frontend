@@ -1,0 +1,33 @@
+.DashboardTitle{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.DashboardContainer {
+  padding: 1.5rem;
+}
+
+.DashboardStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive */
+  gap: 1rem;
+  padding: 1rem;
+  justify-items: center; /* centra horizontalmente cada card */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto; /* centra todo el contenedor */
+}
+
+.DashboardLinks {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.DashboardButton {
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}

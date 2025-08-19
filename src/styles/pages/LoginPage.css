@@ -10,3 +10,14 @@
     background-size: contain;
     background-position: center;
 }
+
+.LoginPageOptions {
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 20px;
+}
+
+.LoginPageLabel{
+    color: white;
+    font-size: 14px;
+}
