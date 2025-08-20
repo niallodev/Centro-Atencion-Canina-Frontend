@@ -1,9 +1,12 @@
 import './Fields.css'
 
-export default function ButtonField({type, className, text}) {
+export default function ButtonField({type, className, text, onclick, form = false}) {
+    console.log(type);
     return (
         <button type={type} 
-        className={`ButtonField ${className}`}
+        // className={`ButtonField ${className}`}
+        className={form ? `ButtonForm${className}` : `ButtonField ${className}`}
+        onClick={onclick ? onclick : undefined}
         >
             {text}
         </button>

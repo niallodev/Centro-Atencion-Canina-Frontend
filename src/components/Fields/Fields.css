@@ -22,6 +22,19 @@
     font-size: 16,
   }
 
+.SelectField{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(87, 87, 87, 0.288);
+  outline: none;
+}
+
+
+
 .LinkButtonField {
   background: none;
   border: none;
@@ -37,3 +50,66 @@
 .LinkButtonField:hover {
   color: #333536;
 }
+
+/* Botones para formulario */
+.ButtonFormAgregar,
+.ButtonFormBorrar {
+  background-color: #10b981;
+  color: white;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ButtonFormAgregar{
+  background-color: #10b981;
+}
+.ButtonFormBorrar {
+  background-color: rgba(255, 0, 0, 0.911);
+}
+
+.ButtonFormAgregar:hover {
+  background-color: #059669;
+}
+
+.ButtonFormBorrar:hover {
+  background-color: rgba(255, 0, 0, 0.849);
+}
+
+.ButtonFormInformacion,
+.ButtonFormEditar,
+.ButtonFormEliminar {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 1.2rem;
+  margin: 0 0.3rem;
+  padding: 5px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+/* .ButtonFormEliminar{
+  background-color: #ff0000d3; 
+} */
+
+.ButtonFormInformacion:hover {
+  color: #3b82f6;
+  transform: scale(1.2);
+}
+.ButtonFormEditar:hover {
+  color: #3b82f6;
+  transform: scale(1.2);
+}
+
+.ButtonFormEliminar:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+

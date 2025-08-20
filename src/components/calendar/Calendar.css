@@ -1,0 +1,148 @@
+/* src/components/Calendar.css */
+
+/* General */
+.rbc-calendar {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* Toolbar */
+.rbc-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.rbc-toolbar-label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.rbc-btn-group button {
+  background-color: #e5e7eb;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  margin-right: 6px;
+  font-weight: 500;
+  color: #374151;
+  transition: background-color 0.2s;
+}
+
+.rbc-btn-group button:hover {
+  background-color: #d1d5db;
+}
+
+.rbc-btn-group .rbc-active {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+
+/* View de días */
+.rbc-time-view {
+  max-height: 80vh; 
+  overflow-y: auto;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+.rbc-time-header{
+    margin: 0 !important;
+}
+
+.rbc-time-header,
+.rbc-time-content {
+  min-width: 700px; /* o el valor que necesites */
+  scrollbar-width: none;
+}
+
+.rbc-time-view::-webkit-scrollbar {
+  width: 2px !important;
+  background-color: red !important;
+}
+
+.rbc-time-view::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+}
+
+.rbc-time-view::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* Cabecera (días) */
+.rbc-header {
+
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  /* border: 1px solid #e5e7eb; */
+}
+
+.rbc-allday-cell
+/* .rbc-row-bg, */
+/* .rbc-day-bg */
+{
+    display: none;
+}
+
+/* Celdas del calendario */
+.rbc-time-slot .rbc-label{
+    color: gray;
+}
+
+.rbc-time-slot,
+.rbc-day-slot,
+.rbc-row {
+  background-color: #ffffff;
+  /* border: 0.5px solid #e5e7eb; */
+}
+
+
+/* "Hoy" */
+.rbc-today {
+  background-color: #1f416d !important;
+}
+
+/* Eventos */
+.rbc-event {
+  background-color: #34d399;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+
+.rbc-event:hover {
+  background-color: #10b981;
+  cursor: pointer;
+}
+
+.rbc-events-container{
+    margin: 0 !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+/* Horarios */
+.rbc-timeslot-group {
+  min-height: 60px;
+}
+
+.rbc-time-content,
+.rbc-time-header-content {
+  border-top: none;
+}

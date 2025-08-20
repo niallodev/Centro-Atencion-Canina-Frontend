@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/layouts/Header.css';
 import {useLogout} from '../hooks/useLogin'
 import perfil from '../assets/profile.jpg'; // Reemplaza con tu ruta de imagen real
+import {LinkButtonField} from '../components/components'
 
 export default function Header() {
   const [menuAbierto, setMenuAbierto] = useState(true);
@@ -14,7 +16,7 @@ export default function Header() {
 
   return (
     <nav className="HeaderNav">
-      <div className="HeaderLogo">Centro de Atención Canino</div>
+      <Link className="HeaderLogo" to={"/dashboard"}>Centro de Atención Canino</Link>
 
       {/* Botón hamburguesa */}
       <div className="Hamburger" onClick={toggleMenu}>
@@ -24,7 +26,7 @@ export default function Header() {
       
        {/* Menú principal */}
       <ul className={`HeaderMenu ${menuAbierto ? 'abierto' : ''}`}>
-        <li><a href="#">Dueños</a></li>
+        <li><Link to="/owner">Dueños</Link></li>
         <li><a href="#">Mascotas</a></li>
         <li><a href="#">Citas</a></li>
         <li>
@@ -42,8 +44,8 @@ export default function Header() {
         <img src={perfil} alt="Perfil" className="ProfileImage" />
         <ul className="ProfileSubMenu">
           <li><a href="#">Cambiar contraseña</a></li>
-          <li><a href="#">Cerrar sesión</a></li>
-          <button onClick={handleSubmit}>Hola</button>
+          <hr />
+          <button className='HeaderCierre' onClick={handleSubmit}>Cerrar sesión</button>
         </ul>
       </div>
     </nav>

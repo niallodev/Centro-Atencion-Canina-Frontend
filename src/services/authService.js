@@ -22,9 +22,9 @@ export const postLogin = async (username, password) =>  {
     } else {
       return { success: false, message: 'Error de conexión con el servidor.' };
     }
-    
   }
 }
+
 // Recuperar Contraseña
 export const pacthForgotPassword = async (email) =>  {
   console.log(email);
@@ -37,8 +37,7 @@ export const pacthForgotPassword = async (email) =>  {
 // Cierre de Sesión
 export const postLogout = async () =>  {
   const id = sessionStorage.getItem('userId');
-  console.log(id);
-  await post(`/usuario/logout/${id}`)
+  if (null) await post(`/usuario/logout/${id}`)
   sessionStorage.clear();
   return true;
 }

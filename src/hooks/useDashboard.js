@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import {getPet } from '../services/petService';
 import {getAppointment } from '../services/appointmentService';
-// import { getTotalMascotas } from '../../services/mascotaService';
-// import { getProximasCitas } from '../../services/citaService';
 
 export const useDashboard = () => {
   const [cantidadMascotas, setCantidadMascotas] = useState(0);

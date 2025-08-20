@@ -1,0 +1,27 @@
+.BasicTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.BasicTable th,
+.BasicTable td {
+  
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.BasicTable th {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+}
+.BasicTable td {
+    color: black;
+}
+
+.BasicTableAccionesCol {
+  text-align: center;
+  white-space: nowrap;
+}
+

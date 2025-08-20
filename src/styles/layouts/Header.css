@@ -13,6 +13,7 @@
   font-size: 1.3rem;
   font-weight: bold;
   text-align: center;
+  text-decoration: none;
 }
 
 /* Menú principal */
@@ -94,14 +95,23 @@ ul.HeaderMenu > li:hover .HeaderSubMenu {
   z-index: 1000;
 }
 
-.ProfileSubMenu li a {
+.ProfileSubMenu li a,
+.ProfileSubMenu .HeaderCierre {
   display: block;
   padding: 12px 20px;
   color: white;
   text-decoration: none;
 }
+.ProfileSubMenu .HeaderCierre{
+  background-color: #34495e;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+}
 
-.ProfileSubMenu li a:hover {
+.ProfileSubMenu li a:hover,
+.ProfileSubMenu .HeaderCierre:hover {
   background-color: #3d566e;
 }
 

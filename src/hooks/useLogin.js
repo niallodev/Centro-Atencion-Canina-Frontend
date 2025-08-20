@@ -15,7 +15,6 @@ export const useLogin = () => {
     setError(null);
     
       const login = await postLogin(username, password);
-      console.log(login);
       if (!login.success) {
         setError(login.message);
       }else{
