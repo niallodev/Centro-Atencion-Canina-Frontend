@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styles/layouts/Header.css';
 import {useLogout} from '../hooks/useLogin'
 import perfil from '../assets/profile.jpg'; // Reemplaza con tu ruta de imagen real
-import {LinkButtonField} from '../components/components'
 
 export default function Header() {
   const [menuAbierto, setMenuAbierto] = useState(true);
@@ -27,8 +26,8 @@ export default function Header() {
        {/* Menú principal */}
       <ul className={`HeaderMenu ${menuAbierto ? 'abierto' : ''}`}>
         <li><Link to="/owner">Dueños</Link></li>
-        <li><a href="#">Mascotas</a></li>
-        <li><a href="#">Citas</a></li>
+        <li><Link to="/pet">Mascotas</Link></li>
+        <li><Link to="/quote">Citas</Link></li>
         <li>
           <a href="#">Servicios</a>
           <ul className="HeaderSubMenu">

@@ -1,9 +1,10 @@
+
 import { post, get, put, del } from '../api/axios'; // Importa los métodos
 
-// Select Owners
-export const getSelectOwners = async () =>  {
+// Select Categories
+export const getSelectCategories = async () =>  {
     try{
-        const response = await get('/dueno/select');
+        const response = await get('/categoria/select');
         const data = response.data
         return { success: true, data:data };
 
@@ -17,10 +18,10 @@ export const getSelectOwners = async () =>  {
 }
 
 
-// Owners
-export const getOwners = async () =>  {
+// Categories
+export const getCategories = async () =>  {
     try{
-        const response = await get('/dueno');
+        const response = await get('/categoria');
         const data = response.data
         return { success: true, data:data };
 
@@ -32,10 +33,11 @@ export const getOwners = async () =>  {
     }
   }
 }
-// Create Owner
-export const postOwners = async (nuevoDueno) =>  {
+
+// Create Category
+export const postCategories = async (nuevaCategoria) =>  {
     try{
-        const response = await post('/dueno', nuevoDueno);
+        const response = await post('/categoria', nuevaCategoria);
         const data = response.status
         return { success: true, status:data };
 
@@ -47,11 +49,10 @@ export const postOwners = async (nuevoDueno) =>  {
     }
   }
 }
-// Edit Owner
-export const putOwners = async (nuevoDueno) =>  {
+// Edit Category
+export const putCategories = async (nuevaCategoria) =>  {
     try{
-        console.log(nuevoDueno);
-        const response = await put(`/dueno/${nuevoDueno.duenoId}`, nuevoDueno);
+        const response = await put(`/categoria/${nuevaCategoria.categoriaId}`, nuevaCategoria);
         const data = response.status
         return { success: true, status:data };
 
@@ -63,11 +64,10 @@ export const putOwners = async (nuevoDueno) =>  {
     }
   }
 }
-// Delete Owner
-export const deleteOwners = async (Id) =>  {
+// Delete Category
+export const deleteCategories = async (Id) =>  {
     try{
-        const response = await del(`/dueno/${Id}`);
-        console.log(response);
+        const response = await del(`/categoria/${Id}`);
         const data = response.status
         return { success: true, status:data };
 

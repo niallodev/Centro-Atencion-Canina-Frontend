@@ -1,4 +1,4 @@
-import { useOwners } from '../../hooks/useOwners'
+import { useOwners } from '../../hooks/hooks'
 import { InputField, SelectField, ButtonField, BasicTable } from '../../components/components'
 import { tipoIdentificaciones } from '../../config/const/const'
 import '../../styles/feactures/Owners.css'
@@ -6,7 +6,7 @@ import '../../styles/feactures/Owners.css'
 export default function Owners() {
     const { duenos, modalVisible, modalMascotasVisible, modalTipo, duenoActual,
         setDuenoActual, abrirModal, abrirModalMascotas, cerrarModal, cerrarModalMascotas,
-        handleSubmit, handleEliminarConfirmado, mockMascotas
+        handleSubmit, handleEliminarConfirmado, mascotas
     } = useOwners();
 
     return (<>
@@ -44,16 +44,15 @@ export default function Owners() {
                     <button className="OwnersModalCerrar" onClick={cerrarModal}>✖</button>
                     {modalTipo === 'eliminar' ? (
                         <>
-                            <h3>¿Eliminar dueño?</h3>
-                            <p>¿Seguro que deseas eliminar a <strong>{duenoActual?.nombre}</strong>?</p>
+                            <h3>¿Eliminar Dueño?</h3>
+                            <p>¿Seguro que deseas eliminar a <strong>{duenoActual?.nombreCompleto}</strong>?</p>
                             <ButtonField type={'button'} form={true} onclick={handleEliminarConfirmado} className="Borrar" text={'Confirmar'} />
                         </>
                     ) : (
                         <>
                             <h3>{modalTipo === 'editar' ? 'Editar Dueño' : 'Nuevo Dueño'}</h3>
                             <form onSubmit={handleSubmit} className="OwnersForm">
-                                {/* <pre>{JSON.stringify(duenoActual,null, 2)}</pre> */}
-                                {/* <pre>{JSON.stringify(duenoActual)}</pre> */}
+                                {JSON.stringify(duenoActual)}
                                 <InputField type={'text'} name="nombreCompleto" placeholder="Nombre completo" value={duenoActual?.nombreCompleto} onChange={e => {setDuenoActual({ ...duenoActual, nombreCompleto: e.target.value })}} required={true}/>
                                 <SelectField name={'tipoIdentificacion'} placeholder={'Selecciona un Tipo de Identificación...'} options={tipoIdentificaciones} value={duenoActual?.tipoIdentificacion} onChange={e => {setDuenoActual({ ...duenoActual, tipoIdentificacion: e.target.value })}} required={true} />
                                 <InputField type={'text'} name="numeroIdentificacion" placeholder="Identificación" value={duenoActual?.numeroIdentificacion} onChange={e => {setDuenoActual({ ...duenoActual, numeroIdentificacion: e.target.value })}} required={true}/>
@@ -71,12 +70,12 @@ export default function Owners() {
             <div className="OwnersModalBackdrop">
                 <div className="OwnersModal">
                     <button className="OwnersModalCerrar" onClick={cerrarModalMascotas}>✖</button>
-                    <h3>Mascotas de {duenoActual?.nombre}</h3>
-                    {mockMascotas[duenoActual?.id]?.length > 0 ? (
+                    <h3>Mascotas de {duenoActual?.nombreCompleto}</h3>
+                    {mascotas.length > 0 ? (
                         <ul>
-                            {mockMascotas[duenoActual.id].map((mascota) => (
-                                <li key={mascota.id}>
-                                    <strong>{mascota.nombre}</strong> – {mascota.raza}, {mascota.edad} años
+                            {mascotas.map((mascota) => (
+                                <li key={mascota.mascotaId}>
+                                    <strong>{mascota.nombreMascota}</strong> – {mascota.nombreRaza}, especie {mascota.especie}
                                 </li>
                             ))}
                         </ul>

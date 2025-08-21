@@ -1,9 +1,10 @@
+
 import { post, get, put, del } from '../api/axios'; // Importa los métodos
 
 // Select Owners
-export const getSelectOwners = async () =>  {
+export const getSelectRaces = async () =>  {
     try{
-        const response = await get('/dueno/select');
+        const response = await get('/raza/select');
         const data = response.data
         return { success: true, data:data };
 
@@ -17,10 +18,10 @@ export const getSelectOwners = async () =>  {
 }
 
 
-// Owners
-export const getOwners = async () =>  {
+// Races
+export const getRaces = async () =>  {
     try{
-        const response = await get('/dueno');
+        const response = await get('/raza');
         const data = response.data
         return { success: true, data:data };
 
@@ -32,10 +33,11 @@ export const getOwners = async () =>  {
     }
   }
 }
-// Create Owner
-export const postOwners = async (nuevoDueno) =>  {
+
+// Create Race
+export const postRaces = async (nuevaRaza) =>  {
     try{
-        const response = await post('/dueno', nuevoDueno);
+        const response = await post('/raza', nuevaRaza);
         const data = response.status
         return { success: true, status:data };
 
@@ -47,11 +49,10 @@ export const postOwners = async (nuevoDueno) =>  {
     }
   }
 }
-// Edit Owner
-export const putOwners = async (nuevoDueno) =>  {
+// Edit Race
+export const putRaces = async (nuevaRaza) =>  {
     try{
-        console.log(nuevoDueno);
-        const response = await put(`/dueno/${nuevoDueno.duenoId}`, nuevoDueno);
+        const response = await put(`/raza/${nuevaRaza.razaId}`, nuevaRaza);
         const data = response.status
         return { success: true, status:data };
 
@@ -63,11 +64,10 @@ export const putOwners = async (nuevoDueno) =>  {
     }
   }
 }
-// Delete Owner
-export const deleteOwners = async (Id) =>  {
+// Delete Race
+export const deleteRaces = async (Id) =>  {
     try{
-        const response = await del(`/dueno/${Id}`);
-        console.log(response);
+        const response = await del(`/raza/${Id}`);
         const data = response.status
         return { success: true, status:data };
 

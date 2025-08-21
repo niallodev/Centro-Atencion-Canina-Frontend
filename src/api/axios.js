@@ -12,7 +12,7 @@ const api = axios.create({
 const get = (url, config = {}) => api.get(url, config);
 const post = (url, data, config = {}) => api.post(url, data, config);
 
-const put = (url, data, config = {}) => api.put(url, data, config);
+const put = (url, data, config = {}) => api.put(url, data, config)
 const del = (url, config = {}) => api.delete(url, config);
 
 export { get, post, put, del };

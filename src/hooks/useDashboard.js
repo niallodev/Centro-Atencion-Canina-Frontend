@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import {getPet } from '../services/petService';
-import {getAppointment } from '../services/appointmentService';
+import { getPetSummary } from '../services/petsService';
+import { getQuoteSummary } from '../services/quotesService';
 
 export const useDashboard = () => {
   const [cantidadMascotas, setCantidadMascotas] = useState(0);
@@ -13,8 +13,8 @@ export const useDashboard = () => {
     
   useEffect(() => {
       async function fetchData() {
-        const totalMascotas = await getPet();
-        const citas = await getAppointment();
+        const totalMascotas = await getPetSummary();
+        const citas = await getQuoteSummary();
         setCantidadMascotas(totalMascotas.data);
         setCitas(citas.data);
       }

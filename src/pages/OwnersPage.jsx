@@ -1,5 +1,5 @@
 import Header from '../layouts/Header'
-import Owners from '../features/owners/Owners'
+import { Owners } from '../features/features'
 import '../styles/pages/OwnersPage.css'
 
 export default function OwnerPage() {

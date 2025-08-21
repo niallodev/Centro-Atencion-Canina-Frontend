@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { getOwners, postOwners, putOwners } from '../services/ownersService'
+import { getSelectOwners, getOwners, postOwners, putOwners, deleteOwners } from '../services/ownersService'
+import { getOwnerPets } from '../services/petsService'
 
 const mockMascotas = {
   1: [
@@ -14,6 +15,8 @@ const mockMascotas = {
 
 export const useOwners = () => {
   const [duenos, setDuenos] = useState([]);
+  const [mascotas, setMascotas] = useState([]);
+  const [selectDuenos, setSelectDuenos] = useState([]);
     const [modalVisible, setModalVisible] = useState(false);
     const [modalMascotasVisible, setModalMascotasVisible] = useState(false);
     const [modalTipo, setModalTipo] = useState(''); // 'agregar' | 'editar' | 'eliminar'
@@ -32,8 +35,10 @@ export const useOwners = () => {
       setModalVisible(true);
     };
 
-    const abrirModalMascotas = (dueno) => {
+    const abrirModalMascotas = async (dueno) => {
       setDuenoActual(dueno);
+      const pets = await getOwnerPets(dueno.duenoId);
+      setMascotas(pets.data)
       setModalMascotasVisible(true);
     };
 
@@ -63,13 +68,13 @@ export const useOwners = () => {
       estado: "Activo"
     };
     if (modalTipo === 'editar') {
+      console.log(nuevoDueno);
+      nuevoDueno.duenoId = duenoActual.duenoId
       const data = await putOwners(nuevoDueno);
-      if (data) setDuenos(prev => prev.map(d => d.id === nuevoDueno.id ? nuevoDueno : d));
+      if (data.success) setDuenos(prev => prev.map(d => d.duenoId  === nuevoDueno.duenoId  ? nuevoDueno : d));
 
     } else {
-      console.log(nuevoDueno);
       const data = await postOwners(nuevoDueno);
-      console.log(data);
       if (data.success) setDuenos(prev => [...prev, nuevoDueno]);
     }
     cerrarModal();
@@ -77,14 +82,25 @@ export const useOwners = () => {
 
   const handleEliminarConfirmado = async () => {
     const data = await deleteOwners(duenoActual.duenoId);
-    if (data) setDuenos(prev => prev.filter(d => d.id !== duenoActual.id));
+    if (data) setDuenos(prev => prev.filter(d => d.duenoId !== duenoActual.duenoId));
     cerrarModal();
-  };  
+  }; 
+  
+  // Para traer los datos para un select 
+  const selectOwner = async () => {
+    const data = await getSelectOwners();
+    if (data.success) {
+      setSelectDuenos(data.data);
+      return data.data;
+    }
+    return []
+  }; 
   
   return {
     duenos, modalVisible, modalMascotasVisible, modalTipo, duenoActual,
     setDuenoActual, abrirModal, abrirModalMascotas, cerrarModal, cerrarModalMascotas, 
-    handleSubmit, handleEliminarConfirmado,
-    mockMascotas
+    handleSubmit, handleEliminarConfirmado, 
+    mascotas,
+    selectOwner, selectDuenos
   };
 };

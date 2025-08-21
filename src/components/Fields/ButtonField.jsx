@@ -1,7 +1,6 @@
 import './Fields.css'
 
 export default function ButtonField({type, className, text, onclick, form = false}) {
-    console.log(type);
     return (
         <button type={type} 
         // className={`ButtonField ${className}`}
