@@ -28,10 +28,9 @@ export default function Owners() {
                     ]}
                     renderActions={(dueno) => (
                         <>
-                        {/* <ButtonField type={'button'} form={true} onclick={() => abrirModalMascotas(dueno)} className="Informacion" text="🔍🐶"/> */}
-                        <ButtonField type={'button'} form={true} onclick={() => abrirModalMascotas(dueno)} className="Informacion" text="🐶"/>
-                        <ButtonField type={'button'} form={true} onclick={() => abrirModal('editar', dueno)} className="Editar" text="✏️"/>
-                        <ButtonField type={'button'} form={true} onclick={() => abrirModal('eliminar', dueno)} className="Eliminar" text="🗑️"/>
+                            <ButtonField type={'button'} form={true} onclick={() => abrirModalMascotas(dueno)} className="Informacion" text="🐶" />
+                            <ButtonField type={'button'} form={true} onclick={() => abrirModal('editar', dueno)} className="Editar" text="✏️" />
+                            <ButtonField type={'button'} form={true} onclick={() => abrirModal('eliminar', dueno)} className="Eliminar" text="🗑️" />
                         </>
                     )}
                 />
@@ -52,13 +51,12 @@ export default function Owners() {
                         <>
                             <h3>{modalTipo === 'editar' ? 'Editar Dueño' : 'Nuevo Dueño'}</h3>
                             <form onSubmit={handleSubmit} className="OwnersForm">
-                                {JSON.stringify(duenoActual)}
-                                <InputField type={'text'} name="nombreCompleto" placeholder="Nombre completo" value={duenoActual?.nombreCompleto} onChange={e => {setDuenoActual({ ...duenoActual, nombreCompleto: e.target.value })}} required={true}/>
-                                <SelectField name={'tipoIdentificacion'} placeholder={'Selecciona un Tipo de Identificación...'} options={tipoIdentificaciones} value={duenoActual?.tipoIdentificacion} onChange={e => {setDuenoActual({ ...duenoActual, tipoIdentificacion: e.target.value })}} required={true} />
-                                <InputField type={'text'} name="numeroIdentificacion" placeholder="Identificación" value={duenoActual?.numeroIdentificacion} onChange={e => {setDuenoActual({ ...duenoActual, numeroIdentificacion: e.target.value })}} required={true}/>
-                                <InputField type={'text'} name="direccion" placeholder="Dirección" value={duenoActual?.direccion} onChange={e => {setDuenoActual({ ...duenoActual, direccion: e.target.value })}} required={true}/>
-                                <InputField type={'text'} name="telefono" placeholder="Teléfono" value={duenoActual?.telefono} onChange={e => {setDuenoActual({ ...duenoActual, telefono: e.target.value })}} required={true}/>
-                                <InputField type={'email'} name={'email'} placeholder={'Correo electrónico'} value={duenoActual?.email} onChange={e => {setDuenoActual({ ...duenoActual, email: e.target.value })}} required={true}/>
+                                <InputField type={'text'} name="nombreCompleto" placeholder="Nombre completo" value={duenoActual?.nombreCompleto} onChange={e => { setDuenoActual({ ...duenoActual, nombreCompleto: e.target.value }) }} required={true} />
+                                <SelectField name={'tipoIdentificacion'} placeholder={'Selecciona un Tipo de Identificación...'} options={tipoIdentificaciones} value={duenoActual?.tipoIdentificacion} onChange={e => { setDuenoActual({ ...duenoActual, tipoIdentificacion: e.target.value }) }} required={true} />
+                                <InputField type={'text'} name="numeroIdentificacion" placeholder="Identificación" value={duenoActual?.numeroIdentificacion} onChange={e => { setDuenoActual({ ...duenoActual, numeroIdentificacion: e.target.value }) }} required={true} />
+                                <InputField type={'text'} name="direccion" placeholder="Dirección" value={duenoActual?.direccion} onChange={e => { setDuenoActual({ ...duenoActual, direccion: e.target.value }) }} required={true} />
+                                <InputField type={'text'} name="telefono" placeholder="Teléfono" value={duenoActual?.telefono} onChange={e => { setDuenoActual({ ...duenoActual, telefono: e.target.value }) }} required={true} />
+                                <InputField type={'email'} name={'email'} placeholder={'Correo electrónico'} value={duenoActual?.email} onChange={e => { setDuenoActual({ ...duenoActual, email: e.target.value }) }} />
                                 <ButtonField type={'submit'} form={true} className="Agregar" text={modalTipo === 'editar' ? 'Actualizar' : 'Guardar'} />
                             </form>
                         </>

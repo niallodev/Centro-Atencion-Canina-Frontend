@@ -1,13 +1,13 @@
 import { post, get, put, del } from '../api/axios'; // Importa los métodos
 
 // Cantidad de Mascotas
-export const getPetSummary = async () =>  {
+export const getPetSummary = async () => {
   try {
     const response = await get('/mascota/count',);
     const data = response.data
-    return { success: true, data:data };
-  }catch (err) {
-    if(err.response){
+    return { success: true, data: data };
+  } catch (err) {
+    if (err.response) {
       return { success: false, message: err.response.data };
     } else {
       return { success: false, message: 'Error de conexión con el servidor.' };
@@ -16,14 +16,14 @@ export const getPetSummary = async () =>  {
 }
 
 // Select Pets
-export const getSelectPets = async () =>  {
-    try{
-        const response = await get('/mascota/select');
-        const data = response.data
-        return { success: true, data:data };
+export const getSelectPets = async () => {
+  try {
+    const response = await get('/mascota/select');
+    const data = response.data
+    return { success: true, data: data };
 
-    }catch (err) {
-    if(err.response){
+  } catch (err) {
+    if (err.response) {
       return { success: false, message: err.response.data };
     } else {
       return { success: false, message: 'Error de conexión con el servidor.' };
@@ -33,14 +33,14 @@ export const getSelectPets = async () =>  {
 
 
 // Pets
-export const getPets = async () =>  {
-    try{
-        const response = await get('/mascota');
-        const data = response.data
-        return { success: true, data:data };
+export const getPets = async () => {
+  try {
+    const response = await get('/mascota');
+    const data = response.data
+    return { success: true, data: data };
 
-    }catch (err) {
-    if(err.response){
+  } catch (err) {
+    if (err.response) {
       return { success: false, message: err.response.data };
     } else {
       return { success: false, message: 'Error de conexión con el servidor.' };
@@ -49,15 +49,14 @@ export const getPets = async () =>  {
 }
 
 // Pets
-export const getOwnerPets = async (Id) =>  {
-  console.log(Id);
-    try{
-        const response = await get(`/mascota/mascota/${Id}`);
-        const data = response.data
-        return { success: true, data:data };
+export const getOwnerPets = async (Id) => {
+  try {
+    const response = await get(`/mascota/mascota/${Id}`);
+    const data = response.data
+    return { success: true, data: data };
 
-    }catch (err) {
-    if(err.response){
+  } catch (err) {
+    if (err.response) {
       return { success: false, message: err.response.data };
     } else {
       return { success: false, message: 'Error de conexión con el servidor.' };
@@ -66,14 +65,14 @@ export const getOwnerPets = async (Id) =>  {
 }
 
 // Create Pet
-export const postPets = async (nuevaMascota) =>  {
-    try{
-        const response = await post('/mascota', nuevaMascota);
-        const data = response.status
-        return { success: true, status:data };
+export const postPets = async (nuevaMascota) => {
+  try {
+    const response = await post('/mascota', nuevaMascota);
+    const data = response.status
+    return { success: true, status: data };
 
-    }catch (err) {
-    if(err.response){
+  } catch (err) {
+    if (err.response) {
       return { success: false, message: err.response.data };
     } else {
       return { success: false, message: 'Error de conexión con el servidor.' };
@@ -81,32 +80,29 @@ export const postPets = async (nuevaMascota) =>  {
   }
 }
 // Edit Pet
-export const putPets = async (nuevaMascota) =>  {
-    try{
-        const response = await put(`/mascota/${nuevaMascota.mascotaId}`, nuevaMascota);
-        console.log(response);
-        const data = response.status
-        console.log(data);
-        return { success: true, status:data };
+export const putPets = async (nuevaMascota) => {
+  try {
+    const response = await put(`/mascota/${nuevaMascota.mascotaId}`, nuevaMascota);
+    const data = response.status
+    return { success: true, status: data };
 
-    }catch (err) {
-      console.log(err);
-      if(err.response){
-        return { success: false, message: err.response.data };
-      } else {
-        return { success: false, message: 'Error de conexión con el servidor.' };
-      }
+  } catch (err) {
+    if (err.response) {
+      return { success: false, message: err.response.data };
+    } else {
+      return { success: false, message: 'Error de conexión con el servidor.' };
     }
+  }
 }
 // Delete Pet
-export const deletePets = async (Id) =>  {
-    try{
-        const response = await del(`/mascota/${Id}`);
-        const data = response.status
-        return { success: true, status:data };
+export const deletePets = async (Id) => {
+  try {
+    const response = await del(`/mascota/${Id}`);
+    const data = response.status
+    return { success: true, status: data };
 
-    }catch (err) {
-    if(err.response){
+  } catch (err) {
+    if (err.response) {
       return { success: false, message: err.response.data };
     } else {
       return { success: false, message: 'Error de conexión con el servidor.' };

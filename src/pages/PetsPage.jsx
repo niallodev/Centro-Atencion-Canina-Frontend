@@ -3,7 +3,7 @@ import { Pets } from '../features/features'
 import '../styles/pages/PetsPage.css'
 
 export default function PetsPage() {
-    return(<>
+    return (<>
         <Header></Header>
         <Pets></Pets>
     </>);

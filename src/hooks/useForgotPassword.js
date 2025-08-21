@@ -17,26 +17,20 @@ export const useForgotPassword = () => {
       return;
     }
     try {
-      // Simular llamada a API
-      // await forgotPassword(email); <-- Esto sería tu función real
       const forgotPassword = await pacthForgotPassword(email);
-      console.log(forgotPassword);
-      if(forgotPassword) {setMessage('Si tu correo está registrado, recibirás instrucciones para recuperar tu contraseña.')};
+      if (forgotPassword) { setMessage('Si tu correo está registrado, recibirás instrucciones para recuperar tu contraseña.') };
       setEmail('');
     } catch (err) {
       setError('Ocurrió un error al procesar la solicitud');
     }
-    setTimeout(()=> {
+    setTimeout(() => {
       setMessage(null);
       setError(null);
     }, TIEMPO_ERROR)
   };
 
   return {
-    email,
-    message,
-    error,
-    setEmail,
-    handleSubmit,
+    email, message, error,
+    setEmail, handleSubmit,
   };
 };

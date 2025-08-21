@@ -12,7 +12,7 @@
   margin-bottom: 15px;
 }
 
-.Card p{
+.Card p {
   margin: 0;
   font-size: 1.2rem;
   text-align: center;
@@ -20,13 +20,12 @@
   font-size: 20px;
 }
 
-
-
-@media (max-width:400px) {  
+@media (max-width:400px) {
   .Card h3 {
-        font-size: 0.9rem;
-    }
-    .Card p {
-        font-size: 0.9rem;
-    }
+    font-size: 0.9rem;
+  }
+
+  .Card p {
+    font-size: 0.9rem;
+  }
 }

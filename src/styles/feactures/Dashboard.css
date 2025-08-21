@@ -1,6 +1,6 @@
-.DashboardTitle{
-    font-size: 1.5rem;
-    text-align: center;
+.DashboardTitle {
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .DashboardContainer {
@@ -9,13 +9,13 @@
 
 .DashboardStats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   padding: 1rem;
-  justify-items: center; /* centra horizontalmente cada card */
+  justify-items: center;
   align-items: center;
   max-width: 1200px;
-  margin: 0 auto; /* centra todo el contenedor */
+  margin: 0 auto;
 }
 
 .DashboardLinks {

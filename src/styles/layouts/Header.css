@@ -24,18 +24,18 @@ ul.HeaderMenu {
   padding: 0;
 }
 
-ul.HeaderMenu > li {
+ul.HeaderMenu>li {
   position: relative;
 }
 
-ul.HeaderMenu > li > a {
+ul.HeaderMenu>li>a {
   display: block;
   padding: 15px 20px;
   color: white;
   text-decoration: none;
 }
 
-ul.HeaderMenu > li > a:hover {
+ul.HeaderMenu>li>a:hover {
   background-color: #34495e;
 }
 
@@ -64,7 +64,7 @@ ul.HeaderSubMenu li a:hover {
   background-color: #3d566e;
 }
 
-ul.HeaderMenu > li:hover .HeaderSubMenu {
+ul.HeaderMenu>li:hover .HeaderSubMenu {
   display: block;
 }
 
@@ -102,7 +102,8 @@ ul.HeaderMenu > li:hover .HeaderSubMenu {
   color: white;
   text-decoration: none;
 }
-.ProfileSubMenu .HeaderCierre{
+
+.ProfileSubMenu .HeaderCierre {
   background-color: #34495e;
   border: none;
   width: 100%;
@@ -148,11 +149,11 @@ ul.HeaderMenu > li:hover .HeaderSubMenu {
     display: none;
   }
 
-  .HeaderMenu > li {
+  .HeaderMenu>li {
     border-top: 1px solid #3d566e;
   }
 
-  .HeaderMenu > li > a {
+  .HeaderMenu>li>a {
     padding: 15px;
   }
 

@@ -1,7 +1,6 @@
 import { post, get, put, del } from '../api/axios'; // Importa los métodos
 
-
-// Select Pets
+// Select Services
 export const getSelectServices = async () =>  {
     try{
         const response = await get('/servicio/select');
@@ -17,8 +16,7 @@ export const getSelectServices = async () =>  {
   }
 }
 
-
-// Pets
+// Services
 export const getServices = async () =>  {
     try{
         const response = await get('/mascota');

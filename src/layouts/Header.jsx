@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/layouts/Header.css';
-import {useLogout} from '../hooks/useLogin'
+import { useLogout } from '../hooks/useLogin'
 import perfil from '../assets/profile.jpg'; // Reemplaza con tu ruta de imagen real
 
 export default function Header() {
   const [menuAbierto, setMenuAbierto] = useState(true);
-  const {handleSubmit} = useLogout();
+  const { handleSubmit } = useLogout();
 
   const toggleMenu = () => {
     setMenuAbierto(!menuAbierto);
-    console.log(menuAbierto);
   };
 
   return (
@@ -19,11 +18,10 @@ export default function Header() {
 
       {/* Botón hamburguesa */}
       <div className="Hamburger" onClick={toggleMenu}>
-        ☰ 
+        ☰
       </div>
-      
-      
-       {/* Menú principal */}
+
+      {/* Menú principal */}
       <ul className={`HeaderMenu ${menuAbierto ? 'abierto' : ''}`}>
         <li><Link to="/owner">Dueños</Link></li>
         <li><Link to="/pet">Mascotas</Link></li>
@@ -31,10 +29,10 @@ export default function Header() {
         <li>
           <a href="#">Servicios</a>
           <ul className="HeaderSubMenu">
-            <li><a href="#">Baños normales</a></li>
-            <li><a href="#">Baños medicados</a></li>
-            <li><a href="#">Peluquería</a></li>
-            <li><a href="#">Desparasitación</a></li>
+            <li><Link to="/service/normalbathrooms">Baños normales</Link></li>
+            <li><Link to="/service/medicatedtoilets">Baños medicados</Link></li>
+            <li><Link to="/service/hairsalon">Peluquería</Link></li>
+            <li><Link to="/service/deworming">Desparasitación</Link></li>
           </ul>
         </li>
       </ul>
@@ -42,8 +40,6 @@ export default function Header() {
       <div className="HeaderProfile">
         <img src={perfil} alt="Perfil" className="ProfileImage" />
         <ul className="ProfileSubMenu">
-          <li><a href="#">Cambiar contraseña</a></li>
-          <hr />
           <button className='HeaderCierre' onClick={handleSubmit}>Cerrar sesión</button>
         </ul>
       </div>

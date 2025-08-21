@@ -1,0 +1,25 @@
+.ServicesContainer {
+  padding: 2rem;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+}
+
+.ServicesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.ServicesHeader h2 {
+  font-size: 1.8rem;
+  margin: 0px;
+  color: #1f2937;
+}
+
+.ServicesTableWrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background: white;
+}

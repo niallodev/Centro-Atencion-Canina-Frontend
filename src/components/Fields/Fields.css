@@ -1,28 +1,32 @@
-
 .InputField {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 12px 15px;
-    margin: 8px 0;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-    font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.Filtro{
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .ButtonField {
-    width: 100%;
-    padding: 12px;
-    border-radius: 20px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.774);
-    color: #660066;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16,
-  }
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.774);
+  color: #660066;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16,
+}
 
-.SelectField{
+.SelectField {
   font-family: 'Times New Roman', Times, serif;
   font-size: 1rem;
   width: 100%;
@@ -64,9 +68,10 @@
   transition: background-color 0.2s ease;
 }
 
-.ButtonFormAgregar{
+.ButtonFormAgregar {
   background-color: #10b981;
 }
+
 .ButtonFormBorrar {
   background-color: rgba(255, 0, 0, 0.911);
 }
@@ -94,14 +99,11 @@
   transition: transform 0.2s ease;
 }
 
-/* .ButtonFormEliminar{
-  background-color: #ff0000d3; 
-} */
-
 .ButtonFormInformacion:hover {
   color: #3b82f6;
   transform: scale(1.2);
 }
+
 .ButtonFormEditar:hover {
   color: #3b82f6;
   transform: scale(1.2);
@@ -111,5 +113,3 @@
   color: #ffffff;
   transform: scale(1.2);
 }
-
-

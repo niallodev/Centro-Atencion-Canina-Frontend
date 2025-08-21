@@ -1,6 +1,6 @@
 import './Tables.css'
 
-export default function BasicTable({ items = [], columns = [], renderActions  }) {
+export default function BasicTable({ items = [], columns = [], renderActions }) {
     return (<>
         <table className="BasicTable">
             <thead>
@@ -17,26 +17,24 @@ export default function BasicTable({ items = [], columns = [], renderActions  })
                         <tr key={index}>
                             {columns.map((col) => (
                                 <td key={col.key}>
-                                {item[col.key] ? (
-                                    col.key.toLowerCase().includes('fechanacimiento') ? (
-                                    // Solo FECHA
-                                    new Date(item[col.key]).toLocaleDateString('es-ES')
-                                    ) : col.key.toLowerCase().includes('fechahora') || col.key.toLowerCase().includes('fecha') ? (
-                                    // FECHA + HORA
-                                    new Date(item[col.key]).toLocaleString('es-ES', {
-                                        dateStyle: 'short',
-                                        timeStyle: 'short'
-                                    })
+                                    {item[col.key] ? (
+                                        col.key.toLowerCase().includes('fechanacimiento') ? (
+                                            // Solo FECHA
+                                            new Date(item[col.key]).toLocaleDateString('es-ES')
+                                        ) : col.key.toLowerCase().includes('fechahora') || col.key.toLowerCase().includes('fecha') ? (
+                                            // FECHA + HORA
+                                            new Date(item[col.key]).toLocaleString('es-ES', {
+                                                dateStyle: 'short',
+                                                timeStyle: 'short'
+                                            })
+                                        ) : (
+                                            item[col.key]
+                                        )
                                     ) : (
-                                    item[col.key]
-                                    )
-                                ) : (
-                                    ''
-                                )}
+                                        ''
+                                    )}
                                 </td>
-
                             ))}
-                        
                             {renderActions && (
                                 <td className="BasicTableAccionesCol">
                                     {renderActions(item)}
@@ -51,9 +49,7 @@ export default function BasicTable({ items = [], columns = [], renderActions  })
                         </td>
                     </tr>
                 )}
-
             </tbody>
         </table>
-
     </>);
 }

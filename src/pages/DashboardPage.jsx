@@ -1,9 +1,9 @@
-import {Dashboard} from '../features/features';
+import { Dashboard } from '../features/features';
 import Header from '../layouts/Header'
 import '../styles/pages/DashboardPage.css'
 
 export default function DashboardPage() {
-    return(<>
+    return (<>
         <Header></Header>
         <Dashboard></Dashboard>
     </>);

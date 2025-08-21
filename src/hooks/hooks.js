@@ -19,5 +19,5 @@ export {
     useRaces,
     useQuotes,
     useServices,
-    useUsers
+    useUsers,
 }
